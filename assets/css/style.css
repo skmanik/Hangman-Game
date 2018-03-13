@@ -1,20 +1,36 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
 body {
-    background: url(../images/pastel2.png) repeat fixed;
+    background: url(../images/pastel2.png) repeat;
     font-family: 'Montserrat', sans-serif;
+    color: #7b7b7b;
 }
 
 h1 {
     display: block;
     position: relative;
     font-family: 'Londrina Outline', sans-serif;
-    font-size: 7em;
+    font-size: 9em;
     text-align: center;
     color: #fff;
     background: #f3c6ff;
     padding-bottom: 18px;
-    margin: 100px 20% 0;
-    transform: rotate(5deg);
+    margin: 100px 12% 0;
     text-transform: lowercase;
+    box-shadow: 0 0 3px #00000014;
+
+    /* add prefix */
+    transform: rotate(2deg);
 }
 
 h1::before,
@@ -28,6 +44,8 @@ h1::after {
     height: 25px;
     background: #ffffff59;
     border: 1px solid #fff;
+
+    /* add prefix */
     transform: rotate(-25deg);
 }
 
@@ -38,17 +56,106 @@ h1::before {
     right: -25px;
 }
 
-p {
-    text-align: center;
-    background: #fff;
-    color: #7b7b7b;
-    margin: 50px 28% 0;
-    padding: 30px;
+.clearfix:after { 
+    content: "."; 
+    visibility: hidden; 
+    display: block; 
+    height: 0; 
+    clear: both;
 }
 
-#word-display {
-    text-align: center;
-    background: #fff6bc;
-    margin: 0 28% 0;
-    height: 250px;
+/* main */
+
+.main {
+    width: 65%;
+    margin: 50px auto;
 }
+
+.main #display-main {
+    position: relative;
+    background: #fff6bc;
+    height: 250px;
+    float: left;
+    width: 65%;
+    box-shadow: 0 3px 3px #00000014;
+}
+
+#display-main p {
+    text-align: center;
+    background: #fdfdfd;
+    padding: 25px;
+}
+
+#letter-bank {
+    position: relative;
+    float: left;
+    width: 33%;
+    margin-left: 2%;
+    height: 250px;
+    background: #f1abc5;
+    padding: 25px;
+    box-shadow: 0 3px 3px #00000014;
+}
+
+#letter-bank p {
+    text-align: center;
+    background: #fdfdfd;
+    padding: 25px;
+    margin: -25px -25px 25px -25px;
+}
+
+#letter-bank #used-letter {
+    color: #fff;
+    font-family: 'Londrina Outline', sans-serif;
+    font-size: 3.5em;
+}
+
+#display-main::before, #letter-bank::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -35px;
+    width: 75px;
+    height: 25px;
+    background: #ffffff59;
+    border: 1px solid #fff;
+}
+
+/* sticky footer */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 240px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    padding-top: 25px;
+    background-color: #fdfdfd;
+    text-align: center;
+    box-shadow: inset 0 3px 3px #00000014;
+}
+
+footer span {
+    font-size: 80%;
+}
+
+/* animation lol */
+
+/*@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 100%; }
+}
+
+body {
+    animation: animatedBackground 60s linear infinite;
+}*/

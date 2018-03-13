@@ -1,11 +1,22 @@
-// global variables
+// ===== global variables
 
-var wordBank = ["strudel", "baklava", "cannoli", "pie", "macaron", "pretzel", "doughnut"];
+// array containing words
 
-var storedWord = wordBank[(Math.random()*wordBank.length)|0];
-console.log('item:', storedWord);
+var wordBank = ["strudel", "baklava", "cannoli", "tart", "macaron", "pretzel", "doughnut"];
 
-// when user presses key
+// computer selects from array
+
+var storedWord = wordBank[(Math.random() * wordBank.length)|0];
+
+console.log("item:", storedWord);
+
+// computer counts string length and displays spaces on screen
+
+var wordDisplay = "_ ".repeat(storedWord.length);
+
+console.log("display:", wordDisplay);
+
+// ===== user presses key
 
 document.onkeyup = function (event) {
 
@@ -23,4 +34,5 @@ document.onkeyup = function (event) {
 
         console.log("you lose!")
     }
+
 };
