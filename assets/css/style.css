@@ -73,7 +73,8 @@ h1::before {
 
 .main #display-main {
     position: relative;
-    background: #fff6bc;
+    background: #ade8d1;
+    color: #fff;
     height: 250px;
     float: left;
     width: 65%;
@@ -83,7 +84,18 @@ h1::before {
 #display-main p {
     text-align: center;
     background: #fdfdfd;
+    color: #7b7b7b;
     padding: 25px;
+}
+
+/* id corresponding to js */
+
+#word-display {
+    display: block;
+    line-height: 180px;
+    font-size: 4em;
+    font-family: 'Londrina Outline', sans-serif;
+    text-align: center;
 }
 
 #letter-bank {

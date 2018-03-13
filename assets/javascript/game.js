@@ -12,9 +12,13 @@ console.log("item:", storedWord);
 
 // computer counts string length and displays spaces on screen
 
-var wordDisplay = "_ ".repeat(storedWord.length);
+var blankWord = "_ ".repeat(storedWord.length);
 
-console.log("display:", wordDisplay);
+console.log("display:", blankWord);
+
+var wordDisplay = document.getElementById("word-display");
+
+wordDisplay.textContent = blankWord;
 
 // ===== user presses key
 
