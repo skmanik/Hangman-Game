@@ -1,0 +1,54 @@
+body {
+    background: url(http://78.media.tumblr.com/d1529ac33117c9e2f73261696c95f7da/tumblr_ny31kik4Vy1qj0r8qo2_400.png) repeat fixed;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    display: block;
+    position: relative;
+    font-family: 'Londrina Outline', sans-serif;
+    font-size: 7em;
+    text-align: center;
+    color: #fff;
+    background: #f3c6ff;
+    padding-bottom: 18px;
+    margin: 100px 20% 0;
+    transform: rotate(5deg);
+    text-transform: lowercase;
+}
+
+h1::before,
+h1::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -25px;
+    width: 75px;
+    height: 25px;
+    background: #ffffff59;
+    border: 1px solid #fff;
+    transform: rotate(-25deg);
+}
+
+h1::before {
+    top: auto;
+    left: auto;
+    bottom: -10px;
+    right: -25px;
+}
+
+p {
+    text-align: center;
+    background: #fff;
+    color: #7b7b7b;
+    margin: 50px 28% 0;
+    padding: 30px;
+}
+
+#word-display {
+    text-align: center;
+    background: #fff6bc;
+    margin: 0 28% 0;
+    height: 250px;
+}
