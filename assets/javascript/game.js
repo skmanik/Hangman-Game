@@ -2,7 +2,7 @@
 
 // stores words in array
 
-var wordBank = ["strudel", "baklava", "cannoli", "tart", "macaron", "pretzel", "doughnut"];
+var wordBank = ["strudel", "baklava", "cannoli", "tart", "macaron", "pretzel", "doughnut", "danish", "croissant", "brioche"];
 
 // selects from array
 
@@ -12,7 +12,9 @@ console.log("item:", storedWord);
 
 // counts string length and displays spaces on screen
 
-var blankWord = "_ ".repeat(storedWord.length);
+var blanks = "_ ";
+
+var blankWord = blanks.repeat(storedWord.length);
 
 console.log("display:", blankWord);
 
@@ -39,6 +41,10 @@ document.onkeyup = function (event) {
 
     if (storedWord.includes(userLetter)) {
 
+        blankWord.replace(blanks, userLetter);
+
+        console.log(blankWord.replace(blanks, userLetter));
+
         console.log("you win!");
 
     }
@@ -46,6 +52,7 @@ document.onkeyup = function (event) {
     else {
 
         console.log("you lose!")
+        
     }
 
 };
