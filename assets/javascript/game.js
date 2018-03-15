@@ -26,10 +26,11 @@ wordDisplay.textContent = blankWord;
 var strikeDisplay = document.getElementById("strikes");
 strikeDisplay.textContent = hangmanStrike;
 
-// === extra shit
+// will be used to check if user puts dumdum things
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var userArray = [];
-// theme
+
+// creates and plays theme song
 var audioTheme = document.createElement("audio");
 audioTheme.setAttribute("src", "assets/music/BirthdayCake.mp3");  
 audioTheme.loop = true;
@@ -40,7 +41,7 @@ function resetGame() {
     location.reload();
 };
 
-// lets uer mute music
+// lets user mute music
 function stopMusic() {
     audioTheme.pause();
 };
@@ -51,15 +52,15 @@ document.onkeyup = function (event) {
 
     if (isGameRunning) {
 
-        // user key
+        // stores user key
         var userLetter = String.fromCharCode(event.which).toLowerCase();
 
-        // maybe check here if userkey is valid in alphabet string make alphabet variableeee check false, return
+        // maybe check here if userkey is valid in alphabet string
         if (alphabet.includes(userLetter) === false) {
             return;
         }
 
-        // if this key is in this array (user's array being pushed intoahdalsjkdhl) then return
+        // maybe check here if user has already pressed that key
         if (userArray.includes(userLetter)) {
             return;
         }
@@ -102,6 +103,7 @@ document.onkeyup = function (event) {
 
             // successful finish
             if (blankWord === storedWord) {
+
                 //var audioWin = document.createElement("audio");
                 audioProg.pause();
                 audioProg.setAttribute("src", "assets/music/YEHO.mp3");  
@@ -111,6 +113,7 @@ document.onkeyup = function (event) {
 
                 // updates game title with win response
                 document.getElementById("game-response").textContent = "Correctamundo!";
+
             }
 
         } else {
@@ -122,6 +125,7 @@ document.onkeyup = function (event) {
 
             // unsuccessful finish: if this gets up to 6 game has to stop
             if (hangmanStrike === 6) {
+
                 // plays lose soundfile
                 var audioLose = document.createElement("audio");
                 audioLose.setAttribute("src", "assets/music/WHOAAA.mp3");  
@@ -132,9 +136,8 @@ document.onkeyup = function (event) {
                 // updates blank word display
                 wordDisplay.textContent = "a: " + storedWord;
 
-                // updates game title with win response
+                // updates game title with lose response
                 document.getElementById("game-response").textContent = "Incorrect! :(";
-
 
             }
 
@@ -143,5 +146,3 @@ document.onkeyup = function (event) {
     }
 
 };
-
-// blankWord is generated using repeat() function but i can try putting for loop in there that checks whether space or not
