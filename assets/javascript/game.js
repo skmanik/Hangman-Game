@@ -2,7 +2,7 @@
 // =======================
 
 // stores words in array
-var wordBank = ["strudel", "baklava", "cannoli", "tart", "macaron", "pretzel", "doughnut", "danish", "croissant", "brioche"];
+var wordBank = ["strudel", "baklava", "cannoli", "quiche", "macaron", "pretzel", "doughnut", "danish", "croissant", "brioche", "churro", "flan"];
 // stores number of strikes
 var hangmanStrike = 0;
 // checks if game is running
@@ -30,10 +30,24 @@ wordDisplay.textContent = blankWord;
 var strikeDisplay = document.getElementById("strikes");
 strikeDisplay.textContent = hangmanStrike;
 
-// extra shit
+// === extra shit
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var userArray = [];
+// theme
+var audioTheme = document.createElement("audio");
+audioTheme.setAttribute("src", "assets/music/BirthdayCake.mp3");  
+audioTheme.loop = true;
+audioTheme.play();
 
+// lets user reset game
+function resetGame() {
+    location.reload();
+};
+
+// lets uer mute music
+function stopMusic() {
+    audioTheme.pause();
+};
 
 // ==== user presses key
 // =====================
@@ -85,12 +99,20 @@ document.onkeyup = function (event) {
                     // updates blank word display
                     wordDisplay.textContent = blankWord;
 
+                    var audioProg = document.createElement("audio");
+                    audioProg.setAttribute("src", "assets/music/OKAY.mp3");  
+                    audioProg.play();
+
                 }
 
             } 
 
             // successful finish
             if (blankWord === storedWord) {
+                //var audioWin = document.createElement("audio");
+                audioProg.pause();
+                audioProg.setAttribute("src", "assets/music/YEHO.mp3");  
+                audioProg.play();
                 console.log("You won!");
 
                 isGameRunning = false;
@@ -109,15 +131,21 @@ document.onkeyup = function (event) {
 
             // unsuccessful finish: if this gets up to 6 game has to stop
             if (hangmanStrike === 6) {
+                // plays lose soundfile
+                var audioLose = document.createElement("audio");
+                audioLose.setAttribute("src", "assets/music/WHOAAA.mp3");  
+                audioLose.play();  
+
                 console.log("You lose!");
 
-                isGameRunning = false;
+                isGameRunning = false;    
 
                 // updates blank word display
                 wordDisplay.textContent = "a: " + storedWord;
 
                 // updates game title with win response
                 document.getElementById("game-response").textContent = "Incorrect! :(";
+
 
             }
 
@@ -127,7 +155,4 @@ document.onkeyup = function (event) {
 
 };
 
-// now what i have to do haaa aahaaaaaa
-
-// attach html to variables (check console.logs)
 // blankWord is generated using repeat() function but i can try putting for loop in there that checks whether space or not
