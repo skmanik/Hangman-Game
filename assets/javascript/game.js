@@ -3,10 +3,8 @@
 
 // stores words in array
 var wordBank = ["strudel", "baklava", "cannoli", "tart", "macaron", "pretzel", "doughnut", "danish", "croissant", "brioche"];
-
 // stores number of strikes
 var hangmanStrike = 0;
-
 // checks if game is running
 var isGameRunning = true;
 
@@ -96,6 +94,9 @@ document.onkeyup = function (event) {
                 console.log("You won!");
 
                 isGameRunning = false;
+
+                // updates game title with win response
+                document.getElementById("game-response").textContent = "Correctamundo!";
             }
 
         } else {
@@ -111,6 +112,13 @@ document.onkeyup = function (event) {
                 console.log("You lose!");
 
                 isGameRunning = false;
+
+                // updates blank word display
+                wordDisplay.textContent = "a: " + storedWord;
+
+                // updates game title with win response
+                document.getElementById("game-response").textContent = "Incorrect! :(";
+
             }
 
         }

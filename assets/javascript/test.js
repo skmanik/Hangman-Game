@@ -36,9 +36,13 @@ strikeDisplay.textContent = hangmanStrike;
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var userArray = [];
 
+// lets user reset game
+function resetGame() {
+    location.reload();
+};
 
-// ==== user presses key
-// =====================
+// ==== lets user presses key
+// ==========================
 document.onkeyup = function (event) {
 
     if (isGameRunning) {
