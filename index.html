@@ -11,28 +11,37 @@
 
 <body>
 
-    <h1 id="game-response">Guess the Pastry</h1>
+    <div class="wrapper">
 
-    <section class="main clearfix">
 
-        <div id="display-main">
-            <p class="smooth">To guess a letter, press the corresponding key on your keyboard.</p>
-            <span id="word-display"></span>
-        </div>
+        <section class="main clearfix">
 
-        <div id="letter-bank">
-            <p class="smooth">Strikes (6 MAX): <span id="strikes"></span></p>
-            <span id="used-letter"></span>
-        </div>
+            <h1 id="game-response">Guess the Pastry</h1>
 
-        <a class="button" onclick="resetGame()">Reset</a>
-        <a class="button" onclick="stopMusic()" id="mute">Mute</a>
+            <div id="display-main">
+                <p class="smooth">To guess a letter, press the corresponding key on your keyboard.</p>
+                <span id="word-display"></span>
+            </div>
 
-    </section>
+            <div id="letter-bank">
+                <p class="smooth">Strikes (6 MAX): <span id="strikes"></span></p>
+                <span id="used-letter"></span>
+            </div>
 
-    <footer>
-        <span class="smooth">Sound files from <em>Mario Party</em>.</span>
-    </footer>
+            <a class="button" onclick="resetGame()">Reset</a>
+            <a class="button" onclick="stopMusic()" id="mute">Mute</a>
+
+        </section>
+
+        <footer>
+            <span class="smooth">
+                <a href="https://github.com/skmanik" target="_blank">click to see github.</a>
+                sound files taken from <em>Mario Party™.</em>
+            </span>
+        </footer>
+
+
+    </div>
 
     <script src="assets/javascript/game.js"></script>
 
