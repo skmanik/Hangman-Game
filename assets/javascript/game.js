@@ -10,17 +10,13 @@ var isGameRunning = true;
 
 // ==== stored word selected from word array
 var storedWord = wordBank[(Math.random() * wordBank.length) | 0];
-console.log(storedWord);
 // corresponding array for letter replacement
 var storeArray = Array.from(storedWord);
-console.log(storeArray);
 
 // ==== blank word corresponding to stored word
 var blankWord = "_".repeat(storedWord.length);
-console.log("display:", blankWord);
 // corresponding array for letter replacement
 var blankArray = Array.from(blankWord);
-console.log(blankArray);
 
 // displays blank word to user
 var wordDisplay = document.getElementById("word-display");
@@ -77,7 +73,6 @@ document.onkeyup = function (event) {
         letterBank.appendChild(usedLetter);
 
         userArray.push(userLetter);
-        console.log(userArray);
 
         if (storedWord.includes(userLetter)) {
 
@@ -91,10 +86,8 @@ document.onkeyup = function (event) {
 
                     // put user letter in blank word at correct index
                     blankArray[i] = userLetter;
-                    console.log(blankArray);
 
                     blankWord = blankArray.join("");
-                    console.log(blankWord);
 
                     // updates blank word display
                     wordDisplay.textContent = blankWord;
@@ -113,7 +106,6 @@ document.onkeyup = function (event) {
                 audioProg.pause();
                 audioProg.setAttribute("src", "assets/music/YEHO.mp3");  
                 audioProg.play();
-                console.log("You won!");
 
                 isGameRunning = false;
 
@@ -124,7 +116,6 @@ document.onkeyup = function (event) {
         } else {
             
             hangmanStrike++;
-            console.log(hangmanStrike);
 
             //updates strike display
             strikeDisplay.textContent = hangmanStrike;
@@ -135,8 +126,6 @@ document.onkeyup = function (event) {
                 var audioLose = document.createElement("audio");
                 audioLose.setAttribute("src", "assets/music/WHOAAA.mp3");  
                 audioLose.play();  
-
-                console.log("You lose!");
 
                 isGameRunning = false;    
 
